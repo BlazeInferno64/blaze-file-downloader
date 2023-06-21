@@ -244,7 +244,7 @@ hr{
 }
 .btn:hover{
     background: hsl(157, 100%, 20%);
-    transform: scale(0.9)
+    transform: scale(0.95)
 }
 .btn > span{
     position: absolute;
@@ -281,7 +281,7 @@ hr{
     cursor: pointer;
 }*/
 .btn:active{
-    transform: scale(0.8);
+    transform: scale(0.93);
     box-shadow: 0 10px 20px 0 rgba(37, 65, 45, 0.75);
 }
 @keyframes rippleffect {
