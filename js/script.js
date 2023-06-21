@@ -62,7 +62,7 @@ function fetchFile(url){
             log.innerText = 'File Successfully Downloaded!';
             log.style.color = "#fff";
             field.value = '';
-            log.style.color = 'Enter an URL first';
+            log.innerText = 'Enter an URL first';
         },3000)
     }).catch(() => {
         console.error("Sorry but there was an error!");
