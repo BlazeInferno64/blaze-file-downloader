@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="black">
     <title>Blaze File Downloader | Download any files for free </title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" href="https://avatars.githubusercontent.com/u/96913755?v=4" type="image/x-icon"/>
@@ -15,11 +15,36 @@
 <body>
     <div class="card">
         <div class="head">
-            <h3 class="h3">
-                Blaze File Downloader
-            </h3>
+            <div class="nav">
+                <h3 class="h3">
+                    Blaze File Downloader
+                </h3>
+                <div class="options" id="options" onclick="change(this)">
+                    <span class="dot1"></span>
+                    <span class="dot2"></span>
+                    <span class="dot3"></span>
+                </div>
+                    <div class="list-actions" id="list">
+                       <ul class="usage none" id="usage">
+                           <p class="heading">
+                               Actions -
+                           </p>
+                           <hr>
+                           <li id="refresh" class="refresh">
+                                Refresh Page
+                           </li>
+                           <li id="" class="url">
+                               Copy URL
+                           </li>
+                           <hr>
+                           <li id="issue" class="issue">
+                               File an issue
+                           </li>
+                       </ul>
+                    </div>
+            </div>
             <p class="p">
-                Copy and paste the link(URL) of any images, videos, pdfs, etc below in the box and it will be available for download
+                Copy and paste the link of any images, videos, pdfs, etc below in the box and it will be available for download
             </p>
             <div class="p1">
                 <p class="txt1">
@@ -44,7 +69,23 @@
             </form>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="main">
+            <h3>
+                Copyright &copy; 2023-24 
+                <a href="https://github.com/blazeinferno64" id="link">
+                    <i class="fa fa-github"></i>  BlazeInferno64
+                    <div class="effect">
+                        <div class="underline">
+                        </div>
+                    </div>
+                </a>
+            </h3>
+        </div>
+    </footer>
     <script src="./js/script.js"></script>
     <script src="./js/ripple.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 </html>

@@ -17,9 +17,14 @@ body{
     transition: all .5s;
     flex-direction: column;
     margin-top: 5rem;
-    margin-bottom: 5rem;
-    animation: animate 1s ease-in-out;
     background: linear-gradient(90deg,rgb(6, 238, 95),74%,rgb(0, 183, 255));
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{
+    list-style: none;
 }
 .card{
     width: 350px;
@@ -30,11 +35,126 @@ body{
     padding: 1.5rem 2rem;
     box-shadow: 0 10px 20px 0 rgba(0,0,0,.75);
 }
+.nav{
+    display: flex;
+    grid-template-columns: repeat(2,1fr);
+}
 .h3{
-    text-align: center;
     font-size: 1.6rem;
     padding: 10px 10px 30px 0px;
 }
+.options{
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 55px;
+    text-align: center;
+    background: transparent;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+.options:hover{
+    background: #1f1f1f;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.click{
+    background: #1f1f1f;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.dot1,.dot2,.dot3{
+    background: #fff;
+    width: 6px;
+    height: 6px;
+    margin: 2px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+}
+.list-actions{
+    display: flex;
+    position: relative;
+}
+.list-actions .usage{
+    position: absolute;
+    right: 0%;
+    list-style: none;
+    width: 130px;
+    font-size: 1.12rem;
+    background: linear-gradient(90deg,rgb(27, 26, 29),90%,rgb(40, 39, 41));
+    color: #fff;
+    padding: 5px 5px 5px 7px;
+    border-radius: .5rem;
+    text-align: left;
+    margin-top: 3.1rem;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.75);
+    animation: displaydrop 1s ease-in-out;
+}
+.none{
+    display: none;
+}
+/*.list-actions .usage::before{
+    content: '';
+    position: relative;
+    bottom: 0;
+    top: 100%;
+    right: 100%;
+    left: 0;
+    background: green;
+}*/
+.heading{
+    padding: 10px;
+    font-size: 1rem;
+}
+.refresh,.issue,.url{
+    font-size: 1rem;
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: all .4s;
+}
+.refresh{
+    margin-top: .7rem;
+    padding: 10px 8px 10px 10px ;
+}
+.url{
+    margin-top: .3rem;
+    margin-bottom: .7rem;
+    padding: 10px 10px 10px 10px ;
+}
+.issue{
+    padding: 10px 10px 10px 10px ;
+    margin-top: .5rem;
+    margin-bottom: .3rem;
+}
+.list-actions ul li:hover{
+    background: rgb(0, 110, 255);
+    color: #fff;
+}
+.active-selection{
+    background: rgb(0, 110, 255);
+    color: #fff;
+}
+.refresh:active,.url:active,.issue:active{
+    scale: .9;
+}
+hr{
+    border-color: rgb(0, 110, 255);
+}
+ @keyframes displaydrop {
+    from{
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+ }
 .p{
     padding: 10px 10px 10px 10px;
     word-spacing: 3px;
@@ -56,11 +176,11 @@ body{
     width: 100%;
     transition: all 1s;
     overflow: hidden;
-    animation: animate 2s ease-in-out;
+    /*animation: animate 2s ease-in-out;*/
 }
-p,h3,input,button{
+/*p,h3,input,button{
     animation: animate 2s ease-in-out;
-}
+}*/
 @keyframes animate {
     from{
         scale: 0;
@@ -89,6 +209,7 @@ p,h3,input,button{
 }
 .field:hover{
     background: hsl(0,0%,77%);
+    box-shadow: 0 5px 20px 0 rgba(55, 99, 68, 0.75);
 }
 .field:focus{
     box-shadow: 0 5px 20px 0 rgba(62, 110, 76, 0.75);
@@ -123,6 +244,7 @@ p,h3,input,button{
 }
 .btn:hover{
     background: hsl(157, 100%, 20%);
+    transform: scale(0.9)
 }
 .btn > span{
     position: absolute;
@@ -159,7 +281,7 @@ p,h3,input,button{
     cursor: pointer;
 }*/
 .btn:active{
-    transform: scale(0.95);
+    transform: scale(0.8);
     box-shadow: 0 10px 20px 0 rgba(37, 65, 45, 0.75);
 }
 @keyframes rippleffect {
@@ -173,18 +295,67 @@ p,h3,input,button{
         width: 500px;
     }
 }
+.footer{
+    background: #2a2d2e;
+    margin-top: 5.7rem;
+    color: #fff;
+    width: 100%;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.footer h3{
+    font-size: 1.45rem;
+}
+.footer h3 a{
+    color: hsl(192, 100%, 50%);
+    transition: color .5s ease-in-out;
+}
+.footer h3 a:hover{
+    color: hsl(192, 100%, 30%);
+}
+.effect{
+    height: 3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: .5rem;
+    transition: width 1.5s;
+    flex-direction: column;
+}
+.underline{
+    height: 3px;
+    background: rgb(0, 128, 85);
+    width: 0;
+    border-radius: .5rem;
+    transition: width 1.5s;
+}
+
 form input:valid ~ button{
     opacity: 1;
     pointer-events: auto;
 }
-@media (max-width: 350px) {
+@media (max-width: 366px) {
     .card{
-        width: 300px;
+        width: 320px;
+    }
+}
+@media (max-width: 450px) {
+    .footer{
+        margin-top: 6rem;
+    }
+}
+@media (max-width: 465px) {
+    .footer{
+        margin-top: 10rem;
     }
 }
 @media (max-width: 500px) {
     body{
         margin-top: 3rem;
-        margin-bottom: 3rem;
     }
 }

@@ -2,6 +2,8 @@ const forms =  document.getElementById("forms");
 const downloadBtn =  document.querySelector(".btn");
 const log =  document.getElementById("status");
 const field = document.getElementById("field");
+const link = document.getElementById("link");
+const underlineEffect = document.querySelector(".underline");
 
 forms.addEventListener("submit",(e) =>{
     e.preventDefault();
@@ -70,3 +72,12 @@ function fetchFile(url){
         console.log("Error Code : 00945000x1");
     })
 }
+
+
+link.addEventListener("mouseover",(e) =>{
+    underlineEffect.style.width = '100%';
+});
+
+link.addEventListener("mouseout",(e) => {
+    underlineEffect.style.width = '0';
+})
