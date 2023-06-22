@@ -14,6 +14,7 @@ log.style.color = '#fff';
 log.style.borderColor = '#ccc';
 
 field.addEventListener("input",(e) =>{
+    e.stopPropagation();
     if (field.value === ''|field.value==null){
         downloadBtn.style.opacity = '.75';
         downloadBtn.style.pointerEvents = 'none';
